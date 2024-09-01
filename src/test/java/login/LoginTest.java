@@ -9,9 +9,9 @@ import java.io.FileNotFoundException;
 public class LoginTest extends BaseTest
 {
     @Test
-public void testValidLogin() throws FileNotFoundException {
+public void testInValidLogin() throws FileNotFoundException {
         LoginPage loginPage = homePage.clickOnSignUpLink();
-        loginPage.insertEmail(dataModel().Login.ValidCredentials.Username);
+        loginPage.insertEmail(dataModel().Login.ValidCredentials.Email);
         loginPage.insertPassword(dataModel().Login.ValidCredentials.Password);
         loginPage.clickOnLoginButton();
     }

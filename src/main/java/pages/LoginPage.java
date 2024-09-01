@@ -31,5 +31,4 @@ public class LoginPage extends MethodHandles {
     click(loginButton,5);
     }
 
-
 }

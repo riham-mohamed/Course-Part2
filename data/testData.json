@@ -1,22 +1,33 @@
 {
   "URL" : "https://automationexercise.com/",
+  "SignUp" :
+  {
+    "ValidSignUp" :
+    {
+      "Username" : "rihammohamed",
+      "Email" : "rihamali52@gmail.com"
+    } ,
+  "InValidSignUp" : {
+    "Email": "rihamali52",
+    "Username": "  "
+  }},
   "Login" :
   {
     "ValidCredentials" :
     {
-     "Username" : "kareem",
-      "Password" : "31031990"
+      "Email" : "rihamali52@gmail.com",
+      "Password" : "241023"
     },
     "InValidCredentials" :
     {
-      "Invalidusername" :
+      "InvalidEmail" :
       {
-        "Username" : "Ahmed",
+        "Email" : "Ahmed",
         "Password" : "31031990"
       },
       "InvalidPassword" :
       {
-        "Username" : "Kareem",
+        "Email" : "rihamali52@gmail.com",
         "Password" : "12345678"
       }
     }

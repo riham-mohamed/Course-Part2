@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 
 public class BaseTest
 {
-    WebDriver driver;
+    public WebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass

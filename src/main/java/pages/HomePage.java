@@ -19,4 +19,11 @@ public class HomePage extends MethodHandles
         return new LoginPage(driver);
     }
 
+    public SignupPage clickOnSign()
+    {
+        click(signUplink, 5);
+        return new SignupPage(driver);
+    }
+
+
 }
