@@ -1,35 +1,39 @@
 {
   "URL" : "https://automationexercise.com/",
-  "SignUp" :
-  {
-    "ValidSignUp" :
-    {
-      "Username" : "rihammohamed",
-      "Email" : "rihamali52@gmail.com"
-    } ,
-  "InValidSignUp" : {
-    "Email": "rihamali52",
-    "Username": "  "
-  }},
-  "Login" :
-  {
-    "ValidCredentials" :
-    {
-      "Email" : "rihamali52@gmail.com",
-      "Password" : "241023"
+  "SignUp" : {
+    "ValidSignUp": {
+      "Username": "rihammohamed",
+      "Email": "rihamali52@gmail.com",
+      "Password": "241023",
+      "FirstName": "riham",
+      "LastName": "mohamed",
+      "Address": "address test",
+      "Country": "United States",
+      "State": "USA",
+      "City": "Cairo",
+      "ZipCode": "19777",
+      "MobileNumber": "01223893250"
     },
-    "InValidCredentials" :
-    {
-      "InvalidEmail" :
-      {
-        "Email" : "Ahmed",
-        "Password" : "31031990"
+    "Login": {
+      "ValidCredentials": {
+        "Email": "rihamali52@gmail.com",
+        "Password": "241023"
       },
-      "InvalidPassword" :
-      {
-        "Email" : "rihamali52@gmail.com",
-        "Password" : "12345678"
+      "InValidCredentials": {
+        "InvalidEmail": {
+          "Email": "Ahmed",
+          "Password": "31031990"
+        },
+        "InvalidPassword": {
+          "Email": "rihamali52@gmail.com",
+          "Password": "12345678"
+        }
       }
     }
-   }
-}
+  },
+  "InValidSignUp":
+  [
+    ["  ","riham"],
+    ["rrr","   "]
+  ]
+  }

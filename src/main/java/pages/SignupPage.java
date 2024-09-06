@@ -26,9 +26,10 @@ public class SignupPage extends MethodHandles
     {
         sendKeys(nameField,name,5);
     }
-    public void clickOnSignupButton()
+    public SecondSignUpPage clickOnSignupButton()
     {
         click(SignupButton,5);
+        return new SecondSignUpPage(driver);
     }
 
 }
