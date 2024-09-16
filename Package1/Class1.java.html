@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Class1.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Class1.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">Package1</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">openqa</span><span class="s2">.</span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">By</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">openqa</span><span class="s2">.</span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">WebDriver</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">openqa</span><span class="s2">.</span><span class="s1">selenium</span><span class="s2">.</span><span class="s1">chrome</span><span class="s2">.</span><span class="s1">ChromeDriver</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">testng</span><span class="s2">.</span><span class="s1">annotations</span><span class="s2">.</span><span class="s1">Test</span><span class="s2">;</span>
+
+<span class="s0">import static </span><span class="s1">org</span><span class="s2">.</span><span class="s1">testng</span><span class="s2">.</span><span class="s1">Assert</span><span class="s2">.</span><span class="s1">assertTrue</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Class1 </span><span class="s2">{</span>
+   <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">test1</span><span class="s2">()</span>
+   <span class="s2">{</span>
+       <span class="s2">{</span>
+           <span class="s1">WebDriver driver </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ChromeDriver</span><span class="s2">();</span>
+           <span class="s1">driver</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">&quot;https://the-internet.herokuapp.com/&quot;</span><span class="s2">);</span>
+           <span class="s1">driver</span><span class="s2">.</span><span class="s1">manage</span><span class="s2">().</span><span class="s1">window</span><span class="s2">().</span><span class="s1">maximize</span><span class="s2">();</span>
+           <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">linkText</span><span class="s2">(</span><span class="s3">&quot;Form Authentication&quot;</span><span class="s2">)).</span><span class="s1">click</span><span class="s2">();</span>
+           <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">xpath</span><span class="s2">(</span><span class="s3">&quot;//input[@id='username']&quot;</span><span class="s2">)).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s3">&quot;tomsmith&quot;</span><span class="s2">);</span>
+           <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">xpath</span><span class="s2">(</span><span class="s3">&quot;//*[@name='password']&quot;</span><span class="s2">)).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s3">&quot;SuperSecretPassword!&quot;</span><span class="s2">);</span>
+           <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;.fa&quot;</span><span class="s2">)).</span><span class="s1">click</span><span class="s2">();</span>
+           <span class="s1">String actualresult </span><span class="s2">= </span><span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;div[id='flash']&quot;</span><span class="s2">)).</span><span class="s1">getText</span><span class="s2">();</span>
+<span class="s4">//String expectedresult = &quot;You logged into a secure area!&quot;;</span>
+           <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">actualresult</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;You logged into a secure area&quot;</span><span class="s2">));</span>
+<span class="s4">//driver.findElement(By.cssSelector(&quot;.icon-2x&quot;)).click();</span>
+<span class="s4">//assertEquals(actualresult,expectedresult);</span>
+<span class="s1">driver</span><span class="s2">.</span><span class="s1">quit</span><span class="s2">();</span>
+       <span class="s2">}</span>
+   <span class="s2">}</span>
+<span class="s1">@Test</span>
+   <span class="s0">public void </span><span class="s1">test2</span><span class="s2">()</span>
+   <span class="s2">{</span>
+       <span class="s4">//valid user name and invalid pw</span>
+       <span class="s1">WebDriver driver </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ChromeDriver</span><span class="s2">();</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">&quot;https://the-internet.herokuapp.com/&quot;</span><span class="s2">);</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">manage</span><span class="s2">().</span><span class="s1">window</span><span class="s2">().</span><span class="s1">maximize</span><span class="s2">();</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">linkText</span><span class="s2">(</span><span class="s3">&quot;Form Authentication&quot;</span><span class="s2">)).</span><span class="s1">click</span><span class="s2">();</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">xpath</span><span class="s2">(</span><span class="s3">&quot;//*[contains(@id,'username')]&quot;</span><span class="s2">)).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s3">&quot;tomsmith&quot;</span><span class="s2">);</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;#password&quot;</span><span class="s2">)).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s3">&quot;Super&quot;</span><span class="s2">);</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;.fa&quot;</span><span class="s2">)).</span><span class="s1">click</span><span class="s2">();</span>
+       <span class="s1">String actualresult </span><span class="s2">= </span><span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;[id='flash']&quot;</span><span class="s2">)).</span><span class="s1">getText</span><span class="s2">();</span>
+       <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">actualresult</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;Your password is invalid!&quot;</span><span class="s2">));</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">quit</span><span class="s2">();</span>
+   <span class="s2">}</span>
+
+ <span class="s1">@Test</span>
+   <span class="s0">public void </span><span class="s1">test3</span><span class="s2">()</span>
+   <span class="s2">{</span>
+       <span class="s4">//invalid user name and invalid pw</span>
+       <span class="s1">WebDriver driver </span><span class="s2">= </span><span class="s0">new </span><span class="s1">ChromeDriver</span><span class="s2">();</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">&quot;https://the-internet.herokuapp.com/&quot;</span><span class="s2">);</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">manage</span><span class="s2">().</span><span class="s1">window</span><span class="s2">().</span><span class="s1">maximize</span><span class="s2">();</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">linkText</span><span class="s2">(</span><span class="s3">&quot;Form Authentication&quot;</span><span class="s2">)).</span><span class="s1">click</span><span class="s2">();</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">xpath</span><span class="s2">(</span><span class="s3">&quot;//*[contains(@id,'username')]&quot;</span><span class="s2">)).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s3">&quot;tom&quot;</span><span class="s2">);</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;#password&quot;</span><span class="s2">)).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s3">&quot;Super&quot;</span><span class="s2">);</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;.fa&quot;</span><span class="s2">)).</span><span class="s1">click</span><span class="s2">();</span>
+       <span class="s1">String actualresult </span><span class="s2">= </span><span class="s1">driver</span><span class="s2">.</span><span class="s1">findElement</span><span class="s2">(</span><span class="s1">By</span><span class="s2">.</span><span class="s1">cssSelector</span><span class="s2">(</span><span class="s3">&quot;.flash.error&quot;</span><span class="s2">)).</span><span class="s1">getText</span><span class="s2">();</span>
+       <span class="s1">assertTrue</span><span class="s2">(</span><span class="s1">actualresult</span><span class="s2">.</span><span class="s1">contains</span><span class="s2">(</span><span class="s3">&quot;Your username is invalid!&quot;</span><span class="s2">));</span>
+       <span class="s1">driver</span><span class="s2">.</span><span class="s1">quit</span><span class="s2">();</span>
+   <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
